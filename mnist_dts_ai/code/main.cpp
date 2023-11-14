@@ -3,7 +3,7 @@
 #include "image_procesing.h"
 #include "ai.h"
 
-int train_ai(ai &ir, ai_dt &ps, int ans_sz, int cases, int j = 0, int save_divider = 872);
+int train_ai(ai &ir, ai_dt &ps, int ans_sz, int cases, int j = 0, int save_divider = 630);
 
 int curve_search_for_best(ai ir, ai_dt &pc, int sz[], int n, int cases){
     //find divider for pushing updates to ai that gives the best result in first run
@@ -14,14 +14,14 @@ int curve_search_for_best(ai ir, ai_dt &pc, int sz[], int n, int cases){
         ai ir1 = ir,
            ir2 = ir;
         int m1 = l + (r - l) / 3, m2 = r - (r - l) / 3;
-        if(train_ai(ir1, pc, sz[n - 1], cases, m1) >
-           train_ai(ir2, pc, sz[n - 1], cases, m2))
+        if(train_ai(ir1, pc, sz[n - 1], cases, 0, m1) >
+           train_ai(ir2, pc, sz[n - 1], cases, 0, m2))
             r = m2;
         else l = m1;
         std::cout << "search on [" << l << ".." << r << "]\n";
     }
     std::cout << "optimal: " << ((l + r) >> 1) << '\n';
-    return l;
+    return (l + r) >> 1;
 }
 
 int main(){
@@ -36,6 +36,7 @@ int main(){
     ai ir(sz, n, "../saved_ai/ai", NewRandomAI);
     int tst = 5, correct = 0, cases = 100;
     std::cout << "training ai:\n";
+    //std::cout << curve_search_for_best(ir, pc, sz, n, cases) << '\n';
     for(int j = 0; j < tst; j++)
         correct += train_ai(ir, pc, sz[n - 1], cases, j);
     std::cout << "correct results: " << correct << " / " << pc.len * tst

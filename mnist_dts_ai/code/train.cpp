@@ -17,7 +17,7 @@ int max_el(float* a, int n){
 void generate_ans(float *a, int ans, short len){
     for(int i = 0; i < len; ++i)
         a[i] = 0;
-    a[ans] = 10.0;
+    a[ans] = 20.0;
 }
 
 int train_ai(ai &ir, ai_dt &pc, int ans_sz, int cases, int j, int save_divider){
