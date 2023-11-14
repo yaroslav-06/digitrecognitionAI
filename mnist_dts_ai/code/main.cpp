@@ -3,7 +3,7 @@
 #include "image_procesing.h"
 #include "ai.h"
 
-int train_ai(ai &ir, ai_dt &ps, int ans_sz, int cases, int j = 0, int save_divider = 630);
+int train_ai(ai &ir, ai_dt &ps, int ans_sz, int cases, int j = 0, int save_divider = 333);
 
 int curve_search_for_best(ai ir, ai_dt &pc, int sz[], int n, int cases){
     //find divider for pushing updates to ai that gives the best result in first run
