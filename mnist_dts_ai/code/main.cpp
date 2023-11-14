@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
-#include "image_procesing.h"
-#include "ai.h"
+#include "imageProcessing/image_procesing.h"
+#include "ai/ai.h"
 
 int train_ai(ai &ir, ai_dt &ps, int ans_sz, int cases, int j = 0, int save_divider = 333);
 

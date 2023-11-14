@@ -1,8 +1,8 @@
 #include <iostream>
 #include <iomanip>
-#include "loader.h"
-#include "image_procesing.h"
-#include "ai.h"
+#include "../loader.h"
+#include "../imageProcessing/image_procesing.h"
+#include "../AI/ai.h"
 
 void pic_to_dts(pic &ps, dts &dt, shp sz){
     dt.bt = new float[sz.h * sz.w];

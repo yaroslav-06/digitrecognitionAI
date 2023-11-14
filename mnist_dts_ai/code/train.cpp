@@ -1,9 +1,9 @@
 #include <iostream>
 #include <iomanip>
 #include "loader.h"
-#include "ai.h"
-#include "mh.h"
-#include "pI.h"
+#include "ai/ai.h"
+#include "AI/mh.h"
+#include "imageProcessing/pI.h"
 
 using namespace std;
 
