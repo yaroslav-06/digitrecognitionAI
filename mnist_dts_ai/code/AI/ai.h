@@ -2,8 +2,10 @@
 
 const int leakyDiv = 100;
 
-int relu_leaky(int n);
-char derRelu_leaky(int n);
+float relu_leaky(float n);
+float derRelu_leaky(float n);
+float sigmoid(float n);
+float derSigmoid(float n);
 
 enum DefaultAI {NewRandomAI, LastSavedAI};
 
